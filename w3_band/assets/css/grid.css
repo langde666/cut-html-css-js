@@ -10,6 +10,11 @@
     margin: 0 auto;
 }
 
+.grid.s-wide {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* margin-left, margin-right - optional */
 .row {
     display: flex;

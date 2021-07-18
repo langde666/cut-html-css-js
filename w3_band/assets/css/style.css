@@ -3,7 +3,8 @@
     --black-color: #000;
     --white-color: #FFF;
     --red-color: #F44336;
-    --gray-color: #ccc;
+    --gray-hover-color: #ccc;
+    --gray-text-color: #757575;
 
     --header-height: 46px;
 }
@@ -22,6 +23,38 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
+    margin: 10px 0;
+}
+
+p {
+    margin: 15px 0;
+}
+
+.black-bg {
+    background-color: var(--black-color) !important;
+}
+
+.white-text {
+    color: var(--white-color) !important;
+}
+
+.active {
+    display: unset !important;
+}
+
+.btn {
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: var(--black-color);
+    background-color: var(--gray-hover-color);
 }
 
 /* Header */
@@ -35,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     /* overflow: hidden; */
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 }
 
 
@@ -54,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header .nav__link:hover {
     color: var(--black-color);
-    background-color: var(--gray-color);
+    background-color: var(--gray-hover-color);
 }
 
 
@@ -76,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header .subnav__link:hover {
-    background-color: var(--gray-color);
+    background-color: var(--gray-hover-color);
 }
 
 .nav__item--has-subnav:hover .subnav{
@@ -85,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav__item--has-subnav:hover .nav__link {
     color: var(--black-color);
-    background-color: var(--gray-color);
+    background-color: var(--gray-hover-color);
 }
 
 
@@ -110,12 +144,192 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Content - Slider */
+.content .slider__img {
+    padding-top: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+
+.content .slider__content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--white-color);
+    text-shadow: 1px solid rgba(0, 0, 0, .6);
+}
+
+.content .slider__content h3 {
+    font-size: 24px;
+}
+
+.content .slider__content p {
+    font-weight: bolder;
+}
+
+/* Content - Container */
+.content-container {
+    padding: 64px 16px;
+}
+
+.content-container__header {
+    text-align: center;
+}
+
+.content-container__header h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.content-container__header p {
+    font-style: italic;
+    opacity: .6;
+}
+
+/* Content - #Band */
+.band__description {
+    text-align: justify ;
+}
+
+.band__member {
+    padding: 32px 0;
+}
+
+.band__member-item {
+    text-align: center;
+}
+
+.band_member-img {
+    width: 60%;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+
+/* Content - #tour */
+.tour__list {
+    color: var(--gray-text-color);
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.tour__item {
+    padding: 8px 24px 8px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tour__item:last-child {
+    border: none;
+}
+
+.sold-out {
+    color: var(--white-color);
+    background-color: var(--red-color);
+    padding: 0 8px;
+    margin-left: 16px;
+    display: none;
+}
+
+.quantity {
+    color: var(--white-color);
+    background-color: var(--black-color);
+    padding: 0 8px;
+    border-radius: 50%;
+    display: none;
+    margin-left: auto;
+}
+
+.ticket__list {
+    padding: 32px 0;
+}
+
+.ticket__item {
+    background-color: var(--white-color);
+    margin-bottom: 16px;
+}
+
+.ticket__item-img {
+    width: 100%;
+}
+
+.ticket__item-img:hover {
+    filter: brightness(50%);
+}
+
+.ticket__item-wrap {
+    padding: 0 16px 16px;
+}
+
+.ticket__item-place {
+    font-weight: bolder;
+}
+
+.ticket__item-time {
+    opacity: .6;
+}
+
+
+/* Content - Contact */
+.contact__wrap {
+    padding: 32px 0;
+}
+
+.contact__info {
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+
+.contact__info-icon {
+    width: 30px;
+}
+
+.form-control {
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0, 0, 0, .2) ;
+}
+
+.form-control-btn {
+    float: right;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.form-control-btn::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* Content- map */
+.map {
+    padding-top: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    filter: grayscale(50%);
+}
+
+
 /* Footer */
 .footer {
     min-height: 216px;
     text-align: center;
     padding: 64px;
-    color: #8f8f8f;
+    color: var(--gray-text-color);
 }
 
 
@@ -127,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer .social__link {
     display: block;
     text-decoration: none;
-    color: #8f8f8f;
+    color: var(--gray-text-color);
     padding: 0 1px;
 }
 
@@ -141,10 +355,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Footer - Copy-right */
-.footer .copy-right {
-    margin: 15px 0;
-}
 
 .footer .copy-right__link {
-    color: #8f8f8f;
+    color: var(--gray-text-color);
 }
