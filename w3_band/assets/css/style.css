@@ -1,0 +1,150 @@
+:root {
+    --text-color: #000;
+    --black-color: #000;
+    --white-color: #FFF;
+    --red-color: #F44336;
+    --gray-color: #ccc;
+
+    --header-height: 46px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--black-color);
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Header - Nav */
+.header .nav__item {
+    display: inline-block;
+    position: relative;
+}
+
+.header .nav__link {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--white-color);
+    padding: 12px 24px;
+}
+
+.header .nav__link:hover {
+    color: var(--black-color);
+    background-color: var(--gray-color);
+}
+
+
+/* Header - Nav - Subnav */
+.header .subnav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: var(--white-color);
+    display: none;
+}
+
+.header .subnav__link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 16px;
+}
+
+.header .subnav__link:hover {
+    background-color: var(--gray-color);
+}
+
+.nav__item--has-subnav:hover .subnav{
+    display: block !important;
+}
+
+.nav__item--has-subnav:hover .nav__link {
+    color: var(--black-color);
+    background-color: var(--gray-color);
+}
+
+
+/* Header - Search button */
+.search-btn__link {
+    display: block;
+    text-decoration: none;
+    color: var(--white-color);
+    padding: 12px 24px;
+}
+
+.search-btn__link:hover {
+    background-color: var(--red-color);
+}
+
+
+/* Content */
+.content {
+    /* height: 1000px;
+    background-color: #666; */
+    margin-top: var(--header-height);
+}
+
+
+/* Footer */
+.footer {
+    min-height: 216px;
+    text-align: center;
+    padding: 64px;
+    color: #8f8f8f;
+}
+
+
+/* Footer - Social */
+.footer .social__item {
+    display: inline-block;
+}
+
+.footer .social__link {
+    display: block;
+    text-decoration: none;
+    color: #8f8f8f;
+    padding: 0 1px;
+}
+
+.footer .social__link:hover {
+    opacity: .6;
+}
+
+.footer .social__icon {
+    font-size: 24px;
+}
+
+
+/* Footer - Copy-right */
+.footer .copy-right {
+    margin: 15px 0;
+}
+
+.footer .copy-right__link {
+    color: #8f8f8f;
+}
