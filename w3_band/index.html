@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/main.js"></script>
 </head>
 <body>
     <!-- Main -->
@@ -20,36 +23,36 @@
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Home</a>
+                        <a href="#" class="nav__link js-close-mobile-menu">Home</a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="#band" class="nav__link">Band</a>
+                        <a href="#band" class="nav__link js-close-mobile-menu">Band</a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="#tour" class="nav__link">Tour</a>
+                        <a href="#tour" class="nav__link js-close-mobile-menu">Tour</a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
+                        <a href="#contact" class="nav__link js-close-mobile-menu">Contact</a>
                     </li>
 
                     <li class="nav__item nav__item--has-subnav">
-                        <a href="#" class="nav__link">More <i class="nav__item--has-subnav-icon fas fa-caret-down"></i></a>
+                        <a href="#" class="nav__link hide-on-mobile">More <i class="nav__item--has-subnav-icon fas fa-caret-down"></i></a>
                         <!-- Header - Subnav -->
-                        <div class="subnav">
+                        <div class="subnav block-on-mobile">
                             <ul class="subnav__list">
                                 <li class="subnav__item">
-                                    <a href="#" class="subnav__link">Merchandise</a>
+                                    <a href="#" class="subnav__link js-close-mobile-menu">Merchandise</a>
                                 </li>
 
                                 <li class="subnav__item">
-                                    <a href="#" class="subnav__link">Extras</a>
+                                    <a href="#" class="subnav__link js-close-mobile-menu">Extras</a>
                                 </li>
 
                                 <li class="subnav__item">
-                                    <a href="#" class="subnav__link">Media</a>
+                                    <a href="#" class="subnav__link js-close-mobile-menu">Media</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,10 +61,17 @@
             </nav>
 
             <!-- Header - Search button -->
-            <div class="search-btn">
+            <div class="search-btn hide-on-mobile">
                 <a href="#" class="search-btn__link">
                     <i class="search-btn__icon fas fa-search"></i>
                 </a>
+            </div>
+
+            <!-- Header - Mobile menu button -->
+            <div class="menu-btn block-on-mobile">
+                <div class="btn menu-btn__link js-mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </header>
 
@@ -70,7 +80,7 @@
             <!-- Slider -->
             <div class="slider">
                 <div class="slider__img" style="background-image: url('./assets/img/slider/slider_1.jpg');">
-                    <div class="slider__content">
+                    <div class="slider__content hide-on-mobile">
                         <h3>Chicago</h3>
                         <p>Thank you, Chicago - A night we won't forget.</p>
                     </div>
@@ -151,7 +161,7 @@
                                                 <p class="ticket__item-place">New York</p>
                                                 <p class="ticket__item-time">Fri 27 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
                                             </div>  
                                         </div>
                                     </div>
@@ -163,7 +173,7 @@
                                                 <p class="ticket__item-place">Paris</p>
                                                 <p class="ticket__item-time">Sat 28 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
                                             </div> 
                                         </div>
                                     </div>
@@ -175,7 +185,7 @@
                                                 <p class="ticket__item-place">San Francisco</p>
                                                 <p class="ticket__item-time">Sun 29 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
                                             </div> 
                                         </div>
                                     </div>
@@ -218,7 +228,7 @@
                                     </div>
 
                                     <div class="col l-6 m-6 c-12">
-                                        <form class="form">
+                                        <form action="" class="form">
                                             <div class="row">
                                                 <div class="col l-6 m-6 c-12">
                                                     <input type="text" placeholder="Name" required class="form-control">
@@ -294,6 +304,49 @@
 
             <p class="copy-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" class="copy-right__link">w3.css</a></p>
         </footer>
+
+        <!-- Modal -->
+        <div class="modal js-close-modal">
+            <div class="modal__container">
+                <header class="modal__header white-text">
+                    <h2><i class="fas fa-suitcase"></i> Tickets</h2>
+
+                    <div class="btn modal__close js-close-modal">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </header>
+
+                <div class="modal__body">
+                    <form action="" class="modal__form">
+                        <label for="buy-tickets-qtt" class="modal__label modal__form">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Tickets, $15 per person</span>
+                        </label>
+                        <input type="text" id="buy-tickets-qtt" placeholder="How many?" class="modal__input modal__form">
+
+                        <label for="buy-tickers-email" class="modal__label">
+                            <i class="fas fa-user"></i>
+                            <span>Send To</span>
+                        </label>
+                        <input type="email" id="buy-tickers-email" placeholder="Enter email" class="modal__input modal__form">
+
+                        <button class="btn buy-ticket-btn modal__form">
+                            <span>PAY</span>
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <footer class="modal__footer">
+                    <button class="btn close-modal-btn js-close-modal">
+                        <span>Close</span>
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <p class="modal-help">Need <a href="#" class="modal-help__link">help?</a></p>
+                </footer>
+            </div>
+        </div>
     </div>
 </body>
 </html>

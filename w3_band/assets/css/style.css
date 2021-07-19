@@ -18,12 +18,21 @@ html, body {
     font-size: 15px;
     line-height: 1.5;
     color: var(--text-color);
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
     margin: 10px 0;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 p {
@@ -50,6 +59,8 @@ p {
     background-color: var(--black-color);
     padding: 8px 16px;
     cursor: pointer;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 .btn:hover {
@@ -136,6 +147,23 @@ p {
 }
 
 
+/* Header - Mobile menu button */
+.menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu-btn__link {
+    padding: 12px 24px;
+}
+
+.open-mobile-menu {
+    height: auto;
+}
+
+
 /* Content */
 .content {
     /* height: 1000px;
@@ -163,10 +191,6 @@ p {
     text-shadow: 1px solid rgba(0, 0, 0, .6);
 }
 
-.content .slider__content h3 {
-    font-size: 24px;
-}
-
 .content .slider__content p {
     font-weight: bolder;
 }
@@ -181,7 +205,6 @@ p {
 }
 
 .content-container__header h2 {
-    font-size: 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
@@ -303,8 +326,6 @@ p {
 
 .form-control-btn {
     float: right;
-    font-size: 15px;
-    line-height: 1.5;
 }
 
 .form-control-btn::after {
@@ -355,7 +376,114 @@ p {
 
 
 /* Footer - Copy-right */
-
 .footer .copy-right__link {
     color: var(--gray-text-color);
+}
+
+/* Modal */
+/* Buy ticket */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .4);
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    display: none;
+    animation: fadeIn ease .2s;
+}
+
+.open {
+    display: flex !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal__container {
+    width: 900px;
+    max-width: calc(100% - 20px);
+    background-color: var(--white-color);
+    animation: slideIn ease .4s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0.6;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal__header {
+    background-color: #009688;
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    letter-spacing: 4px;
+}
+
+.modal__header h2 i {
+    width: 40px;
+}
+
+.modal__close {
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 16px;
+    background-color: transparent;
+}
+
+.modal__body, .modal__footer {
+    padding: 0 16px;
+}
+
+.modal__form {
+    display: block;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.modal__input {
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.buy-ticket-btn {
+    background-color: #009688;
+    padding: 16px;
+}
+
+.modal__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.close-modal-btn {
+    background-color: var(--red-color);
+}
+
+.modal-help__link {
+    color: #2196f3;
 }

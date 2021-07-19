@@ -151,6 +151,7 @@
     margin-left: 91.66667%;
 }
 
+
 /* 740px - max (>= Tablet) */
 @media (min-width: 740px) {
     .row {
@@ -307,6 +308,11 @@
     .l-2 {
         flex: 0 0 16.66667%;
         max-width: 16.66667%;
+    }
+
+    .l-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
     }
     
     .l-3 {
