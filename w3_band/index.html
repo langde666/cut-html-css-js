@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/main.js"></script>
 </head>
 <body>
     <!-- Main -->
@@ -79,12 +78,38 @@
         <div class="content">
             <!-- Slider -->
             <div class="slider">
-                <div class="slider__img" style="background-image: url('./assets/img/slider/slider_1.jpg');">
+                <div class="slider__wrap">
+                    <img src="./assets/img/slider/slider_1.jpg" alt="" class="slider__img" width="100%">
                     <div class="slider__content hide-on-mobile">
                         <h3>Chicago</h3>
                         <p>Thank you, Chicago - A night we won't forget.</p>
                     </div>
                 </div>
+
+                <div class="slider__wrap">
+                    <img src="./assets/img/slider/slider_2.jpg" alt="" class="slider__img" width="100%">
+                    <div class="slider__content hide-on-mobile">
+                        <h3>Los Angeles</h3>
+                        <p>We had the best time playing at Venice Beach!</p>
+                    </div>
+                </div>
+
+                <div class="slider__wrap">
+                    <img src="./assets/img/slider/slider_3.jpg" alt="" class="slider__img" width="100%">
+                    <div class="slider__content hide-on-mobile">
+                        <h3>New York</h3>
+                        <p>The atmosphere in New York is lorem ipsum.</p>
+                    </div>
+                </div>
+
+                <a class="prev slide__btn" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next slide__btn" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="dot__wrap">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                  </div>
             </div>
 
             <!-- Band -->
@@ -161,7 +186,7 @@
                                                 <p class="ticket__item-place">New York</p>
                                                 <p class="ticket__item-time">Fri 27 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn btn--mobile-size js-buy-ticket">Buy Tickets</div>
                                             </div>  
                                         </div>
                                     </div>
@@ -173,7 +198,7 @@
                                                 <p class="ticket__item-place">Paris</p>
                                                 <p class="ticket__item-time">Sat 28 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn btn--mobile-size js-buy-ticket">Buy Tickets</div>
                                             </div> 
                                         </div>
                                     </div>
@@ -185,7 +210,7 @@
                                                 <p class="ticket__item-place">San Francisco</p>
                                                 <p class="ticket__item-time">Sun 29 Nov 2016</p>
                                                 <p class="ticket__item-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                                <div class="btn ticket__item-buy-btn js-buy-ticket">Buy Tickets</div>
+                                                <div class="btn ticket__item-buy-btn btn--mobile-size js-buy-ticket">Buy Tickets</div>
                                             </div> 
                                         </div>
                                     </div>
@@ -245,7 +270,7 @@
                                                 </div>
                                             </div>
 
-                                            <input type="submit" value="SEND" class="btn form-control-btn">
+                                            <input type="submit" value="SEND" class="btn form-control-btn btn--mobile-size">
                                         </form>
                                     </div>
                                 </div>
@@ -348,5 +373,7 @@
             </div>
         </div>
     </div>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

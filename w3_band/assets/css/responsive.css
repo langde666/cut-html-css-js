@@ -37,6 +37,13 @@
     }
 }
 
+@media only screen and (max-width: 739px) {
+    .btn--mobile-size {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     /* Modal buy ticket */
     .modal__container {
