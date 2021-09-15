@@ -1,2 +1,5 @@
-# w3_template
-Front-end practise with W3-school.
+# cut html, css, js
+- w3school template
+
+# references
+- w3school
